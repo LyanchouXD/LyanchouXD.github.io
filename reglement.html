@@ -12,62 +12,44 @@
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="index.html">BouchentoufRP</a>
+      <a class="navbar-brand" href="#">BouchentoufRP</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#">Règlement</a></li>
+          <li class="nav-item"><a class="nav-link" href="reglement.html">Règlement général</a></li>
+		  <li class="nav-item"><a class="nav-link" href="reglement_jobs.html">Règlements métiers</a></li>
           <li class="nav-item"><a class="nav-link" href="#discord">Discord</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HEADER -->
-  <section class="hero">
-    <h1>📜 Règlement du Serveur</h1>
-    <p>Respect, fair-play et immersion sont les piliers de BouchentoufRP.</p>
-  </section>
-
   <!-- RÈGLEMENT -->
-  <section class="container my-5">
-    <h2 class="section-title">⚖️ Règles Générales</h2>
-    <ul>
-      <li>✅ Le respect entre joueurs et staff est obligatoire.</li>
-      <li>🚫 Aucune forme de propos racistes, homophobes, sexistes ou insultants ne sera tolérée.</li>
-      <li>🔇 L'utilisation du micro doit être raisonnable et RP.</li>
-      <li>📢 Le spam vocal, textuel ou via le chat est interdit.</li>
-      <li>👮 Les ordres du staff doivent être respectés à tout moment.</li>
-    </ul>
+	<section class="container my-5">
+		<h1 class="section-title">📜 Règles du serveur</h1>
 
-    <h2 class="section-title">💰 Règles RP</h2>
-    <ul>
-      <li>🎭 Le RP doit être respecté en toutes circonstances (pas de /me abusif, pas de HRP en RP).</li>
-      <li>🏠 Les bases doivent être réalistes et accessibles (pas de base "impossible à raider").</li>
-      <li>🚗 Les véhicules doivent être utilisés de manière RP, pas pour foncer sur des joueurs.</li>
-      <li>🔫 Le "Random Deathmatch" (RDM) et le "FailRP" sont strictement interdits.</li>
-      <li>💬 Le "Metagaming" (utiliser des infos HRP en RP) est interdit.</li>
-    </ul>
+		<div class="server-block">
+			<div id="rules-server"></div>
+		</div>
+		<h1 class="section-title">🚫 Sanctions</h1>
+		
+		<div class="server-block">
+			<div class="server-rule">
+				⚠️ Les avertissements sont donnés selon la gravité des faits.
+			</div>
+			<div class="server-rule">
+				⛔ Les récidives peuvent mener à un bannissement temporaire ou permanent.
+			</div>
+			<div class="server-rule">
+				📨 Toute sanction peut être discutée calmement via le Discord, avec preuves à l’appui.
+			</div>
+	</section>
+  
 
-    <h2 class="section-title">💼 Règles des Métiers</h2>
-    <ul>
-      <li>👮 Les forces de l’ordre doivent agir avec cohérence et justification RP.</li>
-      <li>💀 Les criminels doivent planifier leurs actions de manière crédible et non abusive.</li>
-      <li>🏪 Les marchands et civils doivent jouer leur rôle et ne pas servir de couverture au non-RP.</li>
-      <li>🔁 Changer de métier en boucle pour éviter une situation RP est interdit.</li>
-    </ul>
-
-    <h2 class="section-title">🚫 Sanctions</h2>
-    <ul>
-      <li>⚠️ Les avertissements sont donnés selon la gravité des faits.</li>
-      <li>⛔ Les récidives peuvent mener à un bannissement temporaire ou permanent.</li>
-      <li>📨 Toute sanction peut être discutée calmement via le Discord, avec preuves à l’appui.</li>
-    </ul>
-  </section>
-
+  
   <!-- DISCORD -->
   <section id="discord" class="text-center my-5">
     <h2 class="section-title">💬 Rejoignez notre communauté</h2>
@@ -84,5 +66,25 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+	<script>
+		fetch("https://opensheet.elk.sh/1AJcZHTwczbvbq3olN9H5WhyyiOSGc1YteYJl7zzondw/reglement_general")
+		.then(response => response.json())
+		.then(data => {
+			const container = document.getElementById("rules-server");
+			
+			data.forEach(line=> {
+				const rule = document.createElement("div");
+				rule.classList.add("server-rule");
+			
+				rule.innerHTML = `<p>${line.Regle}<p/>`;
+			
+				container.appendChild(rule);
+			});
+		})
+		.catch(error => {
+			console.error("Erreur chargement règlements :", error);
+		});
+	</script>
+	<script src="background.js"></script>
 </body>
 </html>

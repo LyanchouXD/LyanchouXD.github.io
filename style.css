@@ -39,7 +39,7 @@ body {
 /* ======== HERO ======== */
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 30px 20px;
   background: linear-gradient(180deg, #4b382f, #3b2e2a);
   color: var(--beige);
 }
@@ -98,4 +98,100 @@ footer {
   background-color: #2c211f;
   border-top: 1px solid var(--accent);
   color: var(--beige);
+}
+
+/* ======== REGLEMENTS METIERS ======== */
+
+.jobs-rules {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.job-block {
+  background: linear-gradient(180deg, #4b382f, #3b2e2a);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 25px;
+}
+
+.job-title {
+  color: var(--accent);
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.job-rule {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-left: 4px solid var(--marron-clair);
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+
+.job-rule h3 {
+  color: var(--beige);
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.job-rule p {
+  margin: 0;
+  color: var(--texte-clair);
+  line-height: 1.5;
+}
+
+.server-block {
+  background: linear-gradient(180deg, #4b382f, #3b2e2a);
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 100px;
+}
+
+.server-rule {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.server-rule:last-child {
+  margin-bottom: 0;
+}
+
+.server-rule p {
+  margin: 0;
+}
+
+/* ===== IMAGE DE FOND POUR TOUT LE SITE ===== */
+body {
+  position: relative;
+  z-index: 0;
+  overflow-x: hidden;
+}
+
+.background-fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* image toujours centrée et couvrante */
+  z-index: 0;              /* derrière le contenu */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  pointer-events: none;    /* laisse passer les clics */
+}
+
+/* Contenu au-dessus */
+body > * {
+  position: relative;
+  z-index: 1;
 }
