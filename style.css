@@ -302,7 +302,8 @@ body > * {
   display: inline-block;
   width: 60px;   /* adapte à ton PNG */
   height: 60px;
-  margin-left: 10px;
+  margin-left: -3px;
+  margin-top: -15px;
 }
 
 .promo-badge img {
@@ -316,9 +317,23 @@ body > * {
   left: 50%;
   transform: translate(-50%, -50%);
   
-  color: white;
+  color: #f8f3ef;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-shadow: 0 0 4px rgba(0,0,0,0.8);
   pointer-events: none;
+}
+
+.final-price {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #e6b566;
+}
+
+.old-price {
+  font-size: 0.75rem;
+  color: #c0392b; /* rouge */
+  text-decoration: line-through;
+  opacity: 0.9;
+  margin-top: 5px;
 }

@@ -38,16 +38,19 @@ fetch(url)
       // carte produit
       const card = document.createElement("div");
       card.className = "card mb-3";
-
+	  const oldPrice = (item.Prix && item.Prix_Final && item.Prix !== item.Prix_Final)
+		? `<span class="old-price">${item.Prix} €</span>`
+		: "";
       card.innerHTML = `
         <div class="card-body">
           <h5 class="card-title">${item.Titre}</h5>
           <p class="card-text">${item.Description}</p>
           <div class="d-flex justify-content-between align-items-center">
             <div class="d-flex align-items-center gap-2">
-              <strong>${item.Prix_Final} €</strong>
-              ${promoBadge}
-            </div>
+				<span class="final-price">${item.Prix_Final} €</span>
+				${oldPrice}
+				${promoBadge}
+		</div>
             <a href="${item.Lien}" class="btn btn-primary" target="_blank">
               Acheter
             </a>
