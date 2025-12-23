@@ -1,9 +1,9 @@
 // background.js
 const images = [
-  'fonds/bg1.png',
-  'fonds/bg2.png',
-  'fonds/bg3.png',
-  'fonds/bg4.png'
+  'bg1.png',
+  'bg2.png',
+  'bg3.png',
+  'bg4.png'
 ];
 // attention il faut impérativement un nombre paire d'images.
 let index = 0;
@@ -44,4 +44,5 @@ filterDiv.style.height = '100%';
 filterDiv.style.backgroundColor = 'rgba(59, 46, 42, 0.9)';
 filterDiv.style.zIndex = '1';
 filterDiv.style.pointerEvents = 'none';
+
 document.body.prepend(filterDiv);
