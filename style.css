@@ -40,7 +40,12 @@ body {
 .hero {
   text-align: center;
   padding: 30px 20px;
-  background: linear-gradient(180deg, #4b382f, #3b2e2a);
+  background: linear-gradient(
+  180deg,
+  rgba(75, 56, 47, 1),
+  65%,
+  rgba(59, 46, 42, 0)
+  );
   color: var(--beige);
 }
 
@@ -195,4 +200,16 @@ body {
 body > * {
   position: relative;
   z-index: 1;
+}
+
+.section-discord {
+  text-align: center;
+  /*margin: 3rem 0;*/
+  background: linear-gradient(
+  180deg,
+  rgba(75, 56, 47, 0),
+  35%,
+  rgba(59, 46, 42, 1)
+  );
+  padding: 30px 20px;
 }
