@@ -22,9 +22,14 @@ body {
 }
 
 .navbar-brand {
-  font-weight: bold;
-  color: var(--accent) !important;
-  letter-spacing: 1px;
+  height: 50px;        /* taille du logo */
+  width: auto;
+}
+
+.navbar-logo {
+  height: 35px;        /* taille du logo */
+  width: auto;
+  padding: 0px 10px 0px
 }
 
 .nav-link {
@@ -43,7 +48,7 @@ body {
   background: linear-gradient(
   180deg,
   rgba(75, 56, 47, 1),
-  55%,
+  65%,
   rgba(59, 46, 42, 0)
   );
   color: var(--beige);
@@ -212,4 +217,108 @@ body > * {
   rgba(59, 46, 42, 1)
   );
   padding: 30px 20px;
+}
+
+.section-title-discord {
+  color: var(--accent);
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* POUR LES PAGES EN DEVELOPPEMENT*/
+.text-temporaire {
+  color: var(--accent);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+
+
+/* SHOP*/
+
+/* Conteneur shop */
+#shop {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Catégories */
+#shop h2 {
+  color: #e0c097;
+  border-bottom: 2px solid rgba(224, 192, 151, 0.3);
+  padding-bottom: 5px;
+}
+
+/* Cartes produits */
+.card {
+  background: rgba(60, 45, 38, 0.85);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Titres produits */
+.card-title {
+  color: #f1e4d3;
+}
+
+/* Description */
+.card-text {
+  color: #cbb8a6;
+}
+
+/* Prix */
+.card strong {
+  color: #e6b566;
+  font-size: 1.1rem;
+}
+
+/* Bouton acheter */
+.btn-primary {
+  background-color: #a97142;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #c2854f;
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.promo-badge {
+  position: relative;
+  display: inline-block;
+  width: 60px;   /* adapte à ton PNG */
+  height: 60px;
+  margin-left: 10px;
+}
+
+.promo-badge img {
+  width: 100%;
+  height: 100%;
+}
+
+.promo-badge span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-shadow: 0 0 4px rgba(0,0,0,0.8);
+  pointer-events: none;
 }
